@@ -28,12 +28,14 @@ npm install
 
 - Start the server
 Run 
-```npm run dev
+```
+npm run dev
 ```
 
 ### Backend is live here
 - Live Link 
-```https://github.com/BimoJena/ecommerce_BE.git
+```
+https://github.com/BimoJena/ecommerce_BE.git
 ```
 
 # cURL for every API
