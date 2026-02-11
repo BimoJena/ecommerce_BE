@@ -15,16 +15,26 @@
 
 ### For Local
 - Clone the project from Github repo
-Run `git clone https://github.com/BimoJena/ecommerce_BE.git`
+Run 
+```
+git clone https://github.com/BimoJena/ecommerce_BE.git
+```
 
 - Install Dependencies
-Run `npm install`
+Run 
+```
+npm install
+```
 
 - Start the server
-Run `npm run dev`
+Run 
+```npm run dev
+```
 
 ### Backend is live here
-- Live Link `https://github.com/BimoJena/ecommerce_BE.git`
+- Live Link 
+```https://github.com/BimoJena/ecommerce_BE.git
+```
 
 # cURL for every API
 - To run every single API through Command line simply
