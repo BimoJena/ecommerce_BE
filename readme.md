@@ -33,12 +33,12 @@ npm run dev
 ```
 
 ### Backend is live here
-- Live Link (deployed on render)
+- Live Link (deployed no render)
 ```
-https://github.com/BimoJena/ecommerce_BE.git 
+https://ecommerce-be-slrr.onrender.com/
 ```
 
-- Live Link (deployed on vercel)
+- Live Link (deployed no vercel) use this in all curl commands now
 ```
 https://ecommerce-be-live.vercel.app/
 ```
@@ -52,24 +52,23 @@ https://ecommerce-be-live.vercel.app/
 
 ### Register User
 ```
-curl --location 'https://ecommerce-be-slrr.onrender.com/api/auth/register' \
+curl --location 'https://ecommerce-be-live.vercel.app/api/auth/register' \
 --header 'Content-Type: application/json' \
---header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODZmOGI4YzFhNjU1ZGM4M2I2OWZlOCIsImlhdCI6MTc3MDgwOTY0MywiZXhwIjoxNzcxNDE0NDQzfQ.KQlMg5jjCtRScjOf81nKJlc0IBFPRKpakeR1XzzAe_k' \
 --data-raw '{
-    "name": "kunal",
-    "email": "kunal@gmail.com",
-    "password": "kunal@gmail.com"
+    "name": "verceltest",
+    "email": "verceltest@gmail.com",
+    "password": "verceltest@gmail.com"
 }'
 ```
 
 ### Login User
 ```
-curl --location 'https://ecommerce-be-slrr.onrender.com/api/auth/login' \
+curl --location 'https://ecommerce-be-live.vercel.app/api/auth/login' \
 --header 'Content-Type: application/json' \
 --header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODZmOGI4YzFhNjU1ZGM4M2I2OWZlOCIsImlhdCI6MTc3MDgwOTY0MywiZXhwIjoxNzcxNDE0NDQzfQ.KQlMg5jjCtRScjOf81nKJlc0IBFPRKpakeR1XzzAe_k' \
 --data-raw '{
-    "email": "kunal@gmail.com",
-    "password": "kunal@gmail.com"
+    "email": "verceltest@gmail.com",
+    "password": "verceltest@gmail.com"
 }'
 ```
 
