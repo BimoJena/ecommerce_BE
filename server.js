@@ -3,7 +3,9 @@ dotenv.config();
 import app from './src/app.js';
 import connectDB from './src/config/db.js';
 
+// Connect to MongoDB (works for both local and Vercel)
 connectDB();
+
 const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {

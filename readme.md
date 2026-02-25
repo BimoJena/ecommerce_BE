@@ -33,9 +33,14 @@ npm run dev
 ```
 
 ### Backend is live here
-- Live Link 
+- Live Link (deployed on render)
 ```
-https://github.com/BimoJena/ecommerce_BE.git
+https://github.com/BimoJena/ecommerce_BE.git 
+```
+
+- Live Link (deployed on vercel)
+```
+https://ecommerce-be-live.vercel.app/
 ```
 
 # cURL for every API
