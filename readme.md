@@ -55,10 +55,11 @@ https://ecommerce-be-live.vercel.app/
 ```
 curl --location 'https://ecommerce-be-live.vercel.app/api/auth/register' \
 --header 'Content-Type: application/json' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjZiZWIwMWYyZWE0NTJiMmQ3MDJjZCIsImlhdCI6MTc3MzU4NDA0OSwiZXhwIjoxNzc0MTg4ODQ5fQ.ZGhQMDLGpWzKWegAbRJNNv4JVQRUP7vZbW2FoZJ567Y' \
 --data-raw '{
-    "name": "verceltest",
-    "email": "verceltest@gmail.com",
-    "password": "verceltest@gmail.com"
+    "name": "kunal jena",
+    "email": "jenabimochan33@gmail.com",
+    "password": "jenabimochan33@gmail.com"
 }'
 ```
 
@@ -66,23 +67,23 @@ curl --location 'https://ecommerce-be-live.vercel.app/api/auth/register' \
 ```
 curl --location 'https://ecommerce-be-live.vercel.app/api/auth/login' \
 --header 'Content-Type: application/json' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjZiZWIwMWYyZWE0NTJiMmQ3MDJjZCIsImlhdCI6MTc3MzU4NDA4OCwiZXhwIjoxNzc0MTg4ODg4fQ.YIf6FYzwp_eUA1WlzMIfiHOtISMZc6aoeBrz-3M2h_4' \
 --data-raw '{
-    "email": "verceltest@gmail.com",
-    "password": "verceltest@gmail.com"
+    "email": "jenabimochan33@gmail.com",
+    "password": "jenabimochan33@gmail.com"
 }'
 ```
 
 ### Logout User
 ```
 curl --location --request POST 'https://ecommerce-be-live.vercel.app/api/auth/logout' \
---header 'Cookie: token=<your_token>' \
 --data ''
 ```
 
 ### Send Account Verification OTP
 ```
 curl --location --request POST 'https://ecommerce-be-live.vercel.app/api/auth/send-verify-otp' \
---header 'Cookie: token=<your_token>' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjZiZWIwMWYyZWE0NTJiMmQ3MDJjZCIsImlhdCI6MTc3MzU4NDE3MSwiZXhwIjoxNzc0MTg4OTcxfQ.pOZsYzXsPEu1LpCtEQPljaxeP-EzND87s5Z_qXvBNf0' \
 --data ''
 ```
 
@@ -91,9 +92,9 @@ curl --location --request POST 'https://ecommerce-be-live.vercel.app/api/auth/se
 ```
 curl --location 'https://ecommerce-be-live.vercel.app/api/auth/verify-account' \
 --header 'Content-Type: application/json' \
---header 'Cookie: token=<your_token>' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjZiZWIwMWYyZWE0NTJiMmQ3MDJjZCIsImlhdCI6MTc3MzU4NDE3MSwiZXhwIjoxNzc0MTg4OTcxfQ.pOZsYzXsPEu1LpCtEQPljaxeP-EzND87s5Z_qXvBNf0' \
 --data '{
-    "otp": "592368"
+    "otp": "650401"
 }'
 ```
 
@@ -101,8 +102,9 @@ curl --location 'https://ecommerce-be-live.vercel.app/api/auth/verify-account' \
 ```
 curl --location 'https://ecommerce-be-live.vercel.app/api/auth/send-resetPassword-otp' \
 --header 'Content-Type: application/json' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjZiZWIwMWYyZWE0NTJiMmQ3MDJjZCIsImlhdCI6MTc3MzU4NDE3MSwiZXhwIjoxNzc0MTg4OTcxfQ.pOZsYzXsPEu1LpCtEQPljaxeP-EzND87s5Z_qXvBNf0' \
 --data-raw '{
-    "email": "your@email.com"
+    "email": "taskbimo@gmail.com"
 }'
 ```
 
@@ -110,10 +112,11 @@ curl --location 'https://ecommerce-be-live.vercel.app/api/auth/send-resetPasswor
 ```
 curl --location 'https://ecommerce-be-live.vercel.app/api/auth/reset-password' \
 --header 'Content-Type: application/json' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjZiZWIwMWYyZWE0NTJiMmQ3MDJjZCIsImlhdCI6MTc3MzU4NDE3MSwiZXhwIjoxNzc0MTg4OTcxfQ.pOZsYzXsPEu1LpCtEQPljaxeP-EzND87s5Z_qXvBNf0' \
 --data-raw '{
-    "email": "your@email.com",
-    "otp": "378889",
-    "newPassword": "yournewpassword"
+    "email": "taskbimo@gmail.com",
+    "otp": "990256",
+    "newPassword": "24MCAFSD0008"
 }'
 ```
 
@@ -125,15 +128,17 @@ curl --location 'https://ecommerce-be-live.vercel.app/api/auth/reset-password' \
 ```
 curl --location 'https://ecommerce-be-live.vercel.app/api/category/create-category' \
 --header 'Content-Type: application/json' \
---header 'Cookie: token=<your_admin_token>' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjZiMTQ0NmQ5MDIyM2Y2Zjc4Nzg0ZSIsImlhdCI6MTc3MzU4NDU2OSwiZXhwIjoxNzc0MTg5MzY5fQ.x7ZUdjIFqj3j_LkrZnJEeuT_QVOgHswxQ2VgMP8caSw' \
 --data '{
-    "name": "mobile"
+    "name": "clothes"
 }'
 ```
 
 ### Get All Categories
 ```
-curl --location 'https://ecommerce-be-live.vercel.app/api/category/get-all-category'
+curl --location 'https://ecommerce-be-live.vercel.app/api/category/get-all-category' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjZiMTQ0NmQ5MDIyM2Y2Zjc4Nzg0ZSIsImlhdCI6MTc3MzU4NDU2OSwiZXhwIjoxNzc0MTg5MzY5fQ.x7ZUdjIFqj3j_LkrZnJEeuT_QVOgHswxQ2VgMP8caSw' \
+--data ''
 ```
 
 
@@ -144,49 +149,54 @@ curl --location 'https://ecommerce-be-live.vercel.app/api/category/get-all-categ
 - Optional fields: `discountedPrice`, `subcategory`, `featured` (true/false)
 ```
 curl --location 'https://ecommerce-be-live.vercel.app/api/products/create-product' \
---header 'Cookie: token=<your_admin_token>' \
---form 'productName="Realme C21"' \
---form 'productDescription="Best Budget Phone"' \
---form 'productPrice="10500"' \
---form 'discountedPrice="9500"' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjZiMTQ0NmQ5MDIyM2Y2Zjc4Nzg0ZSIsImlhdCI6MTc3MzU4NDU2OSwiZXhwIjoxNzc0MTg5MzY5fQ.x7ZUdjIFqj3j_LkrZnJEeuT_QVOgHswxQ2VgMP8caSw' \
+--form 'productName="Slipper 3"' \
+--form 'productDescription="Comfy Beach Wear"' \
+--form 'productPrice="399"' \
 --form 'stock="50"' \
---form 'category="6987f9c8e79bd6aaac57a0c5"' \
---form 'subcategory="android"' \
+--form 'category="69b6b22c6d90223f6f78785c"' \
+--form 'subcategory="Beach Wear"' \
 --form 'featured="true"' \
---form 'images=@"/C:/Users/jenab/Desktop/backend images/realmeC21.png"'
+--form 'images=@"/C:/Users/jenab/Desktop/cherrypick.png"' \
+--form 'discountedPrice="299"'
 ```
 
 ### Get All Products
 ```
 curl --location 'https://ecommerce-be-live.vercel.app/api/products/get-all-product' \
---header 'Cookie: token=<your_token>'
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjZiMTQ0NmQ5MDIyM2Y2Zjc4Nzg0ZSIsImlhdCI6MTc3MzU4NDU2OSwiZXhwIjoxNzc0MTg5MzY5fQ.x7ZUdjIFqj3j_LkrZnJEeuT_QVOgHswxQ2VgMP8caSw' \
+--data ''
 ```
 
 ### Get Featured Products
 - Returns products marked as featured. Optional `?limit=` query param (default 8).
 ```
-curl --location 'https://ecommerce-be-live.vercel.app/api/products/featured'
+curl --location 'https://ecommerce-be-live.vercel.app/api/products/featured' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjZiMTQ0NmQ5MDIyM2Y2Zjc4Nzg0ZSIsImlhdCI6MTc3MzU4NDU2OSwiZXhwIjoxNzc0MTg5MzY5fQ.x7ZUdjIFqj3j_LkrZnJEeuT_QVOgHswxQ2VgMP8caSw' \
+--data ''
 ```
-
+- optional with limit
 ```
-curl --location 'https://ecommerce-be-live.vercel.app/api/products/featured?limit=4'
+curl --location 'https://ecommerce-be-live.vercel.app/api/products/featured?limit=4' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjZiMTQ0NmQ5MDIyM2Y2Zjc4Nzg0ZSIsImlhdCI6MTc3MzU4NDU2OSwiZXhwIjoxNzc0MTg5MzY5fQ.x7ZUdjIFqj3j_LkrZnJEeuT_QVOgHswxQ2VgMP8caSw'
 ```
 
 ### Get Single Product
 - Add the product._id at the end of the API signature.
 ```
-curl --location 'https://ecommerce-be-live.vercel.app/api/products/6987fa5ae79bd6aaac57a0ca'
+curl --location 'https://ecommerce-be-live.vercel.app/api/products/6987fa5ae79bd6aaac57a0ca' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjZiMTQ0NmQ5MDIyM2Y2Zjc4Nzg0ZSIsImlhdCI6MTc3MzU4NDU2OSwiZXhwIjoxNzc0MTg5MzY5fQ.x7ZUdjIFqj3j_LkrZnJEeuT_QVOgHswxQ2VgMP8caSw'
 ```
 
 ### Add Review to Product
 - Logged in users can add one review per product. Rating is required (1-5), comment is optional.
 ```
-curl --location 'https://ecommerce-be-live.vercel.app/api/products/6987fa5ae79bd6aaac57a0ca/add-review' \
+curl --location 'https://ecommerce-be-live.vercel.app/api/products/69b6c1071f2ea452b2d702e5/add-review' \
 --header 'Content-Type: application/json' \
---header 'Cookie: token=<your_token>' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjZiMTQ0NmQ5MDIyM2Y2Zjc4Nzg0ZSIsImlhdCI6MTc3MzU4NDU2OSwiZXhwIjoxNzc0MTg5MzY5fQ.x7ZUdjIFqj3j_LkrZnJEeuT_QVOgHswxQ2VgMP8caSw' \
 --data '{
     "rating": 4,
-    "comment": "Great product, fast delivery!"
+    "comment": "Great comfort"
 }'
 ```
 
@@ -198,42 +208,42 @@ curl --location 'https://ecommerce-be-live.vercel.app/api/products/6987fa5ae79bd
 ```
 curl --location 'https://ecommerce-be-live.vercel.app/api/cart/add-to-cart' \
 --header 'Content-Type: application/json' \
---header 'Cookie: token=<your_token>' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjZiMTQ0NmQ5MDIyM2Y2Zjc4Nzg0ZSIsImlhdCI6MTc3MzU4NDU2OSwiZXhwIjoxNzc0MTg5MzY5fQ.x7ZUdjIFqj3j_LkrZnJEeuT_QVOgHswxQ2VgMP8caSw' \
 --data '{
-    "productId": "6987fa5ae79bd6aaac57a0ca",
-    "quantity": 1
+    "productId": "69b6b41e6d90223f6f78786c",
+    "quantity": 4
 }'
 ```
 
 ### Get Cart
 ```
 curl --location 'https://ecommerce-be-live.vercel.app/api/cart/get-cart' \
---header 'Cookie: token=<your_token>'
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjZiMTQ0NmQ5MDIyM2Y2Zjc4Nzg0ZSIsImlhdCI6MTc3MzU4NDU2OSwiZXhwIjoxNzc0MTg5MzY5fQ.x7ZUdjIFqj3j_LkrZnJEeuT_QVOgHswxQ2VgMP8caSw'
 ```
 
 ### Update Cart Item
 ```
 curl --location 'https://ecommerce-be-live.vercel.app/api/cart/update-cart' \
 --header 'Content-Type: application/json' \
---header 'Cookie: token=<your_token>' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjZiMTQ0NmQ5MDIyM2Y2Zjc4Nzg0ZSIsImlhdCI6MTc3MzU4NDU2OSwiZXhwIjoxNzc0MTg5MzY5fQ.x7ZUdjIFqj3j_LkrZnJEeuT_QVOgHswxQ2VgMP8caSw' \
 --data '{
-    "productId": "6987fa5ae79bd6aaac57a0ca",
-    "quantity": 3
+    "productId": "69b6b41e6d90223f6f78786c",
+    "quantity": 11
 }'
 ```
 
 ### Remove Item From Cart
 - Add the product._id at the end of the API signature.
 ```
-curl --location --request POST 'https://ecommerce-be-live.vercel.app/api/cart/remove/6987fa5ae79bd6aaac57a0ca' \
---header 'Cookie: token=<your_token>' \
+curl --location --request POST 'https://ecommerce-be-live.vercel.app/api/cart/remove/69b6b3976d90223f6f787862' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjZiMTQ0NmQ5MDIyM2Y2Zjc4Nzg0ZSIsImlhdCI6MTc3MzU4NDU2OSwiZXhwIjoxNzc0MTg5MzY5fQ.x7ZUdjIFqj3j_LkrZnJEeuT_QVOgHswxQ2VgMP8caSw' \
 --data ''
 ```
 
 ### Clear Cart
 ```
 curl --location --request POST 'https://ecommerce-be-live.vercel.app/api/cart/clear-cart' \
---header 'Cookie: token=<your_token>'
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjZiMTQ0NmQ5MDIyM2Y2Zjc4Nzg0ZSIsImlhdCI6MTc3MzU4NDU2OSwiZXhwIjoxNzc0MTg5MzY5fQ.x7ZUdjIFqj3j_LkrZnJEeuT_QVOgHswxQ2VgMP8caSw'
 ```
 
 
@@ -245,11 +255,11 @@ curl --location --request POST 'https://ecommerce-be-live.vercel.app/api/cart/cl
 ```
 curl --location 'https://ecommerce-be-live.vercel.app/api/orders/place-order' \
 --header 'Content-Type: application/json' \
---header 'Cookie: token=<your_token>' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjZiMTQ0NmQ5MDIyM2Y2Zjc4Nzg0ZSIsImlhdCI6MTc3MzU4NDU2OSwiZXhwIjoxNzc0MTg5MzY5fQ.x7ZUdjIFqj3j_LkrZnJEeuT_QVOgHswxQ2VgMP8caSw' \
 --data '{
     "paymentMethod": "COD",
     "shippingAddress": {
-        "fullName": "John Doe",
+        "fullName": "Bimochan Jena",
         "addressLine1": "123 Main Street",
         "city": "Mumbai",
         "state": "Maharashtra",
@@ -263,29 +273,29 @@ curl --location 'https://ecommerce-be-live.vercel.app/api/orders/place-order' \
 ### Get Order Details
 - Add the order._id at the end of the API signature.
 ```
-curl --location 'https://ecommerce-be-live.vercel.app/api/orders/orderDetails/6989e6011e903f1ef7b35212' \
---header 'Cookie: token=<your_token>'
+curl --location 'https://ecommerce-be-live.vercel.app/api/orders/orderDetails/69b6ba8a8b579bc386c9ae73' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjZiMTQ0NmQ5MDIyM2Y2Zjc4Nzg0ZSIsImlhdCI6MTc3MzU4NDU2OSwiZXhwIjoxNzc0MTg5MzY5fQ.x7ZUdjIFqj3j_LkrZnJEeuT_QVOgHswxQ2VgMP8caSw'
 ```
 
 ### My Orders History
 ```
 curl --location 'https://ecommerce-be-live.vercel.app/api/orders/get-myOrder' \
---header 'Cookie: token=<your_token>'
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjZiMTQ0NmQ5MDIyM2Y2Zjc4Nzg0ZSIsImlhdCI6MTc3MzU4NDU2OSwiZXhwIjoxNzc0MTg5MzY5fQ.x7ZUdjIFqj3j_LkrZnJEeuT_QVOgHswxQ2VgMP8caSw'
 ```
 
 ### Get All Orders (Admin only)
 ```
 curl --location 'https://ecommerce-be-live.vercel.app/api/orders/all-orders' \
---header 'Cookie: token=<your_admin_token>'
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjZiMTQ0NmQ5MDIyM2Y2Zjc4Nzg0ZSIsImlhdCI6MTc3MzU4NDU2OSwiZXhwIjoxNzc0MTg5MzY5fQ.x7ZUdjIFqj3j_LkrZnJEeuT_QVOgHswxQ2VgMP8caSw'
 ```
 
 ### Update Order Status (Admin only)
 - Add the order._id at the end of the API signature.
 - Valid statuses: `placed`, `confirmed`, `shipped`, `out_for_delivery`, `cancelled`
 ```
-curl --location --request PATCH 'https://ecommerce-be-live.vercel.app/api/orders/6989e6011e903f1ef7b35212/status' \
+curl --location --request PATCH 'https://ecommerce-be-live.vercel.app/api/orders/69b6ba8a8b579bc386c9ae73/status' \
 --header 'Content-Type: application/json' \
---header 'Cookie: token=<your_admin_token>' \
+--header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5YjZiMTQ0NmQ5MDIyM2Y2Zjc4Nzg0ZSIsImlhdCI6MTc3MzU4NDU2OSwiZXhwIjoxNzc0MTg5MzY5fQ.x7ZUdjIFqj3j_LkrZnJEeuT_QVOgHswxQ2VgMP8caSw' \
 --data '{
     "orderStatus": "shipped"
 }'
