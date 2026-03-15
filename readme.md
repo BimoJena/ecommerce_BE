@@ -5,6 +5,7 @@
 - Product Management (admin) APIs
 - Cart System APIs
 - Order APIs
+- Reviews & Ratings APIs
 
 ## Tech Stack
 - Node.js
@@ -33,12 +34,12 @@ npm run dev
 ```
 
 ### Backend is live here
-- Live Link (deployed no render)
+- Live Link (deployed on render)
 ```
 https://ecommerce-be-slrr.onrender.com/
 ```
 
-- Live Link (deployed no vercel) use this in all curl commands now
+- Live Link (deployed on vercel) use this in all curl commands
 ```
 https://ecommerce-be-live.vercel.app/
 ```
@@ -48,7 +49,7 @@ https://ecommerce-be-live.vercel.app/
 
 
 ## Authentication APIs
-- Create New User, Login and Logout the current User, By default registered accound will be a normal user not admin, to make it admin go to mongodb database and change the role of the registered user to [admin] or contact to the developer.
+- Create New User, Login and Logout the current User. By default registered account will be a normal user not admin, to make it admin go to mongodb database and change the role of the registered user to [admin] or contact the developer.
 
 ### Register User
 ```
@@ -65,7 +66,6 @@ curl --location 'https://ecommerce-be-live.vercel.app/api/auth/register' \
 ```
 curl --location 'https://ecommerce-be-live.vercel.app/api/auth/login' \
 --header 'Content-Type: application/json' \
---header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODZmOGI4YzFhNjU1ZGM4M2I2OWZlOCIsImlhdCI6MTc3MDgwOTY0MywiZXhwIjoxNzcxNDE0NDQzfQ.KQlMg5jjCtRScjOf81nKJlc0IBFPRKpakeR1XzzAe_k' \
 --data-raw '{
     "email": "verceltest@gmail.com",
     "password": "verceltest@gmail.com"
@@ -74,104 +74,131 @@ curl --location 'https://ecommerce-be-live.vercel.app/api/auth/login' \
 
 ### Logout User
 ```
-curl --location --request POST 'https://ecommerce-be-slrr.onrender.com/api/auth/logout' \
---header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODZmOGI4YzFhNjU1ZGM4M2I2OWZlOCIsImlhdCI6MTc3MDgwOTY0MywiZXhwIjoxNzcxNDE0NDQzfQ.KQlMg5jjCtRScjOf81nKJlc0IBFPRKpakeR1XzzAe_k' \
+curl --location --request POST 'https://ecommerce-be-live.vercel.app/api/auth/logout' \
+--header 'Cookie: token=<your_token>' \
 --data ''
 ```
 
 ### Send Account Verification OTP
 ```
-curl --location --request POST 'https://ecommerce-be-slrr.onrender.com/api/auth/send-verify-otp' \
---header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODZmOGI4YzFhNjU1ZGM4M2I2OWZlOCIsImlhdCI6MTc3MDgwOTY0MywiZXhwIjoxNzcxNDE0NDQzfQ.KQlMg5jjCtRScjOf81nKJlc0IBFPRKpakeR1XzzAe_k' \
+curl --location --request POST 'https://ecommerce-be-live.vercel.app/api/auth/send-verify-otp' \
+--header 'Cookie: token=<your_token>' \
 --data ''
 ```
 
 ### Verify Email with OTP
-- OTP will be sent to registered email address make sure to enter original email address only.
+- OTP will be sent to registered email address, make sure to enter original email address only.
 ```
-curl --location 'https://ecommerce-be-slrr.onrender.com/api/auth/verify-account' \
+curl --location 'https://ecommerce-be-live.vercel.app/api/auth/verify-account' \
 --header 'Content-Type: application/json' \
---header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODZmOGI4YzFhNjU1ZGM4M2I2OWZlOCIsImlhdCI6MTc3MDgwOTY0MywiZXhwIjoxNzcxNDE0NDQzfQ.KQlMg5jjCtRScjOf81nKJlc0IBFPRKpakeR1XzzAe_k' \
+--header 'Cookie: token=<your_token>' \
 --data '{
     "otp": "592368"
 }'
-``` 
+```
 
 ### Send Reset Password OTP
 ```
-curl --location 'https://ecommerce-be-slrr.onrender.com/api/auth/send-resetPassword-otp' \
+curl --location 'https://ecommerce-be-live.vercel.app/api/auth/send-resetPassword-otp' \
 --header 'Content-Type: application/json' \
---header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODZmOGI4YzFhNjU1ZGM4M2I2OWZlOCIsImlhdCI6MTc3MDgwOTY0MywiZXhwIjoxNzcxNDE0NDQzfQ.KQlMg5jjCtRScjOf81nKJlc0IBFPRKpakeR1XzzAe_k' \
 --data-raw '{
-    "email": "taskbimo@gmail.com"
+    "email": "your@email.com"
 }'
 ```
 
 ### Reset Password
 ```
-curl --location 'https://ecommerce-be-slrr.onrender.com/api/auth/reset-password' \
+curl --location 'https://ecommerce-be-live.vercel.app/api/auth/reset-password' \
 --header 'Content-Type: application/json' \
---header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODZmOGI4YzFhNjU1ZGM4M2I2OWZlOCIsImlhdCI6MTc3MDgwOTY0MywiZXhwIjoxNzcxNDE0NDQzfQ.KQlMg5jjCtRScjOf81nKJlc0IBFPRKpakeR1XzzAe_k' \
 --data-raw '{
-    "email": "taskbimo@gmail.com",
+    "email": "your@email.com",
     "otp": "378889",
-    "newPassword": "24MCAFSD0008"
+    "newPassword": "yournewpassword"
 }'
 ```
 
 
 ## Category APIs (for ADMIN use only)
-- only ADMIN can create the category for the product, before creating any new product first have to create the category if the category does not exist, later on to create any product use the category._id from category TABLE to create the product
+- Only ADMIN can create categories. Before creating any product, first create the category if it does not exist. Use the category._id when creating a product.
 
 ### Create Category
-- only ADMIN can create the category 
 ```
-curl --location 'https://ecommerce-be-slrr.onrender.com/api/category/create-category' \
+curl --location 'https://ecommerce-be-live.vercel.app/api/category/create-category' \
 --header 'Content-Type: application/json' \
---header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODZmOGI4YzFhNjU1ZGM4M2I2OWZlOCIsImlhdCI6MTc3MDgwOTY0MywiZXhwIjoxNzcxNDE0NDQzfQ.KQlMg5jjCtRScjOf81nKJlc0IBFPRKpakeR1XzzAe_k' \
+--header 'Cookie: token=<your_admin_token>' \
 --data '{
     "name": "mobile"
 }'
 ```
 
-### Get All Category List
+### Get All Categories
 ```
-curl --location 'https://ecommerce-be-slrr.onrender.com/api/category/get-all-category' \
---header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODZmOGI4YzFhNjU1ZGM4M2I2OWZlOCIsImlhdCI6MTc3MDgwOTY0MywiZXhwIjoxNzcxNDE0NDQzfQ.KQlMg5jjCtRScjOf81nKJlc0IBFPRKpakeR1XzzAe_k' \
---data ''
+curl --location 'https://ecommerce-be-live.vercel.app/api/category/get-all-category'
 ```
 
-## Product APIs (for ADMIN use only)
-- Create Products with the help of category._id, if any specific category is not present in the DB, first create the category then we can create the product
 
-### Create Product
-- only ADMIN can create the product and to upload images [seperate image services] has been used like [imagekit.io]
+## Product APIs
+
+### Create Product (Admin only)
+- Only ADMIN can create products. Images are uploaded via [imagekit.io].
+- Optional fields: `discountedPrice`, `subcategory`, `featured` (true/false)
 ```
-curl --location 'https://ecommerce-be-slrr.onrender.com/api/products/create-product' \
---header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODZmOGI4YzFhNjU1ZGM4M2I2OWZlOCIsImlhdCI6MTc3MDgwOTY0MywiZXhwIjoxNzcxNDE0NDQzfQ.KQlMg5jjCtRScjOf81nKJlc0IBFPRKpakeR1XzzAe_k' \
+curl --location 'https://ecommerce-be-live.vercel.app/api/products/create-product' \
+--header 'Cookie: token=<your_admin_token>' \
 --form 'productName="Realme C21"' \
 --form 'productDescription="Best Budget Phone"' \
 --form 'productPrice="10500"' \
+--form 'discountedPrice="9500"' \
 --form 'stock="50"' \
 --form 'category="6987f9c8e79bd6aaac57a0c5"' \
+--form 'subcategory="android"' \
+--form 'featured="true"' \
 --form 'images=@"/C:/Users/jenab/Desktop/backend images/realmeC21.png"'
 ```
 
-### Get All Category List
+### Get All Products
 ```
-curl --location 'https://ecommerce-be-slrr.onrender.com/api/products/get-all-product' \
---header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODZmOGI4YzFhNjU1ZGM4M2I2OWZlOCIsImlhdCI6MTc3MDgwOTY0MywiZXhwIjoxNzcxNDE0NDQzfQ.KQlMg5jjCtRScjOf81nKJlc0IBFPRKpakeR1XzzAe_k' \
---data ''
+curl --location 'https://ecommerce-be-live.vercel.app/api/products/get-all-product' \
+--header 'Cookie: token=<your_token>'
 ```
+
+### Get Featured Products
+- Returns products marked as featured. Optional `?limit=` query param (default 8).
+```
+curl --location 'https://ecommerce-be-live.vercel.app/api/products/featured'
+```
+
+```
+curl --location 'https://ecommerce-be-live.vercel.app/api/products/featured?limit=4'
+```
+
+### Get Single Product
+- Add the product._id at the end of the API signature.
+```
+curl --location 'https://ecommerce-be-live.vercel.app/api/products/6987fa5ae79bd6aaac57a0ca'
+```
+
+### Add Review to Product
+- Logged in users can add one review per product. Rating is required (1-5), comment is optional.
+```
+curl --location 'https://ecommerce-be-live.vercel.app/api/products/6987fa5ae79bd6aaac57a0ca/add-review' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: token=<your_token>' \
+--data '{
+    "rating": 4,
+    "comment": "Great product, fast delivery!"
+}'
+```
+
 
 ## Cart APIs
-- manage logged in user cart here by adding updating removing products into your cart
+- Manage logged in user cart by adding, updating, and removing products.
 
-### Add To Cart 
+### Add To Cart
 ```
-curl --location 'https://ecommerce-be-slrr.onrender.com/api/cart/add-to-cart' \
+curl --location 'https://ecommerce-be-live.vercel.app/api/cart/add-to-cart' \
 --header 'Content-Type: application/json' \
---header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODZmOGI4YzFhNjU1ZGM4M2I2OWZlOCIsImlhdCI6MTc3MDgwOTY0MywiZXhwIjoxNzcxNDE0NDQzfQ.KQlMg5jjCtRScjOf81nKJlc0IBFPRKpakeR1XzzAe_k' \
+--header 'Cookie: token=<your_token>' \
 --data '{
     "productId": "6987fa5ae79bd6aaac57a0ca",
     "quantity": 1
@@ -180,56 +207,86 @@ curl --location 'https://ecommerce-be-slrr.onrender.com/api/cart/add-to-cart' \
 
 ### Get Cart
 ```
-curl --location 'https://ecommerce-be-slrr.onrender.com/api/cart/get-cart' \
---header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODZmOGI4YzFhNjU1ZGM4M2I2OWZlOCIsImlhdCI6MTc3MDgwOTY0MywiZXhwIjoxNzcxNDE0NDQzfQ.KQlMg5jjCtRScjOf81nKJlc0IBFPRKpakeR1XzzAe_k'
+curl --location 'https://ecommerce-be-live.vercel.app/api/cart/get-cart' \
+--header 'Cookie: token=<your_token>'
 ```
 
-### Update Cart
+### Update Cart Item
 ```
-curl --location 'https://ecommerce-be-slrr.onrender.com/api/cart/update-cart' \
+curl --location 'https://ecommerce-be-live.vercel.app/api/cart/update-cart' \
 --header 'Content-Type: application/json' \
---header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODZmOGI4YzFhNjU1ZGM4M2I2OWZlOCIsImlhdCI6MTc3MDgwOTY0MywiZXhwIjoxNzcxNDE0NDQzfQ.KQlMg5jjCtRScjOf81nKJlc0IBFPRKpakeR1XzzAe_k' \
+--header 'Cookie: token=<your_token>' \
 --data '{
     "productId": "6987fa5ae79bd6aaac57a0ca",
-    "quantity": 1
+    "quantity": 3
 }'
 ```
 
 ### Remove Item From Cart
-- add the cartId at the end of the api signature
+- Add the product._id at the end of the API signature.
 ```
-curl --location --request POST 'https://ecommerce-be-slrr.onrender.com/api/cart/remove/6987fa5ae79bd6aaac57a0ca' \
+curl --location --request POST 'https://ecommerce-be-live.vercel.app/api/cart/remove/6987fa5ae79bd6aaac57a0ca' \
+--header 'Cookie: token=<your_token>' \
 --data ''
 ```
 
 ### Clear Cart
 ```
-curl --location --request POST 'https://ecommerce-be-slrr.onrender.com/api/cart/clear-cart' \
---header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODZmOGI4YzFhNjU1ZGM4M2I2OWZlOCIsImlhdCI6MTc3MDgwOTY0MywiZXhwIjoxNzcxNDE0NDQzfQ.KQlMg5jjCtRScjOf81nKJlc0IBFPRKpakeR1XzzAe_k'
+curl --location --request POST 'https://ecommerce-be-live.vercel.app/api/cart/clear-cart' \
+--header 'Cookie: token=<your_token>'
 ```
 
+
 ## Order APIs
+- Order total is auto-calculated: subtotal + 18% GST tax + ₹50 flat shipping = totalAmount.
+- shippingAddress is now a structured object (all fields required).
 
 ### Place Order
 ```
-curl --location 'https://ecommerce-be-slrr.onrender.com/api/orders/place-order' \
+curl --location 'https://ecommerce-be-live.vercel.app/api/orders/place-order' \
 --header 'Content-Type: application/json' \
---header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODZmOGI4YzFhNjU1ZGM4M2I2OWZlOCIsImlhdCI6MTc3MDgwOTY0MywiZXhwIjoxNzcxNDE0NDQzfQ.KQlMg5jjCtRScjOf81nKJlc0IBFPRKpakeR1XzzAe_k' \
+--header 'Cookie: token=<your_token>' \
 --data '{
-  "paymentMethod": "COD",
-  "shippingAddress": "Bhubaneswar, Odisha"
+    "paymentMethod": "COD",
+    "shippingAddress": {
+        "fullName": "John Doe",
+        "addressLine1": "123 Main Street",
+        "city": "Mumbai",
+        "state": "Maharashtra",
+        "postalCode": "400001",
+        "country": "India",
+        "phone": "9999999999"
+    }
 }'
 ```
 
 ### Get Order Details
-- add the order._id at the end of the API signature
+- Add the order._id at the end of the API signature.
 ```
-curl --location 'https://ecommerce-be-slrr.onrender.com/api/orders/orderDetails/6989e6011e903f1ef7b35212' \
---header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODZmOGI4YzFhNjU1ZGM4M2I2OWZlOCIsImlhdCI6MTc3MDgwOTY0MywiZXhwIjoxNzcxNDE0NDQzfQ.KQlMg5jjCtRScjOf81nKJlc0IBFPRKpakeR1XzzAe_k'
+curl --location 'https://ecommerce-be-live.vercel.app/api/orders/orderDetails/6989e6011e903f1ef7b35212' \
+--header 'Cookie: token=<your_token>'
 ```
 
 ### My Orders History
 ```
-curl --location 'https://ecommerce-be-slrr.onrender.com/api/orders/get-myOrder' \
---header 'Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ODZmOGI4YzFhNjU1ZGM4M2I2OWZlOCIsImlhdCI6MTc3MDgwOTY0MywiZXhwIjoxNzcxNDE0NDQzfQ.KQlMg5jjCtRScjOf81nKJlc0IBFPRKpakeR1XzzAe_k'
+curl --location 'https://ecommerce-be-live.vercel.app/api/orders/get-myOrder' \
+--header 'Cookie: token=<your_token>'
+```
+
+### Get All Orders (Admin only)
+```
+curl --location 'https://ecommerce-be-live.vercel.app/api/orders/all-orders' \
+--header 'Cookie: token=<your_admin_token>'
+```
+
+### Update Order Status (Admin only)
+- Add the order._id at the end of the API signature.
+- Valid statuses: `placed`, `confirmed`, `shipped`, `out_for_delivery`, `cancelled`
+```
+curl --location --request PATCH 'https://ecommerce-be-live.vercel.app/api/orders/6989e6011e903f1ef7b35212/status' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: token=<your_admin_token>' \
+--data '{
+    "orderStatus": "shipped"
+}'
 ```

@@ -17,6 +17,8 @@ export const addToCart = async (req,res) => {
             return res.status(404).json({status: false, message: "Product not found"})
         }
 
+        const effectivePrice = product.discountedPrice ?? product.productPrice;
+
         let cart = await cartModel.findOne({user: userId});
 
         if(!cart){
@@ -25,9 +27,9 @@ export const addToCart = async (req,res) => {
                 items: [{
                     product: productId,
                     quantity: quantity || 1,
-                    price: product.productPrice
+                    price: effectivePrice
                 }],
-                totalPrice: product.productPrice * (quantity || 1)
+                totalPrice: effectivePrice * (quantity || 1)
             })
         }else{
             const index = cart.items.findIndex(
@@ -39,7 +41,7 @@ export const addToCart = async (req,res) => {
                 cart.items.push({
                     product: productId,
                     quantity: quantity || 1,
-                    price: product.productPrice
+                    price: effectivePrice
                 })
             }
             cart.totalPrice = cart.items.reduce(
