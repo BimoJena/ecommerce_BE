@@ -79,7 +79,7 @@ In Vercel Dashboard → Settings → Environment Variables
 
 Make sure `MONGODB_URI` is:
 ```
-mongodb+srv://taskbimo:24MCAFSD0008@cluster0.1utbwpa.mongodb.net/ecommerceBE_APIs?retryWrites=true&w=majority&appName=Cluster0
+mongodb+srv://username:password@cluster0.1utbwpa.mongodb.net/ecommerceBE_APIs?retryWrites=true&w=majority&appName=Cluster0
 ```
 
 ### Check Vercel Logs:
